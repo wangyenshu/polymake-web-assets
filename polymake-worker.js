@@ -6,8 +6,5 @@ onmessage = (msg) => {
   importScripts("polymake.js");
   importScripts("polymake.data.js");
 
-  if (!self.asmLibraryArg) self.asmLibraryArg = self.wasmImports;
-  if (self.SYSCALLS && !self.SYSCALLS.get) self.SYSCALLS.get = self.syscallGetVarargI;
-
   emscriptenHack(new TtyClient(msg.data));
 };
